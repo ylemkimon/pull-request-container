@@ -1,5 +1,9 @@
 name: Docker
 
+permissions:
+  packages: write
+  organization-packages: write
+
 on:
   push:
     # Publish `main` as Docker `latest` image.
