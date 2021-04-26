@@ -1,9 +1,5 @@
 name: Docker
 
-permissions:
-  packages: write
-  organizationpackages: write
-
 on:
   push:
     # Publish `main` as Docker `latest` image.
@@ -31,7 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: echo "${{ github.ref }}"
+      - run: |
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/users/codertocat -I
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
