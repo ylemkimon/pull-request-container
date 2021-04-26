@@ -2,7 +2,7 @@ name: Docker
 
 permissions:
   packages: write
-  organization-packages: write
+  organization_packages: write
 
 on:
   push:
