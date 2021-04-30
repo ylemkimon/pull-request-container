@@ -16,7 +16,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: test-image
+  IMAGE_NAME: t-image
 
 jobs:
   # Push image to GitHub Packages.
@@ -26,9 +26,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - run: |
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -s -D - https://api.github.com/users/codertocat
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
