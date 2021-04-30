@@ -17,7 +17,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/ylemkimon/t-image@sha256:b6dbf64cb2077742f6fde25db10f5893020bde4c6354dbc6bf5a9ea26ec32d84
+      image: ghcr.io/ylemkimon/tt-image
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
